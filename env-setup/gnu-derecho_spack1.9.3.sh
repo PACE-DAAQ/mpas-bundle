@@ -16,7 +16,8 @@ module use /glade/work/epicufsrt/contrib/spack-stack/derecho/modulefiles
 module load ecflow/5.8.4
 module load mysql/8.0.33
 
-module use /glade/work/epicufsrt/contrib/spack-stack/derecho/spack-stack-1.9.3/envs/ue-gcc-12.4-crtm-fix-3.1.1.3/install/modulefiles/Core/
+#module use /glade/work/epicufsrt/contrib/spack-stack/derecho/spack-stack-1.9.3/envs/ue-gcc-12.4-crtm-fix-3.1.1.3/install/modulefiles/Core/
+module use /glade/work/epicufsrt/contrib/spack-stack/derecho/spack-stack-1.9.3/envs/rebuild-ue-gcc-12.4.0/install/modulefiles/Core/
 module load stack-gcc/12.4.0
 module load stack-cray-mpich/8.1.29
 module load stack-python/3.11.7
