@@ -12,7 +12,6 @@
 
 cmake_minimum_required( VERSION 3.14 )
 project( mpas-bundle VERSION 3.0.0 LANGUAGES C CXX Fortran )
-
 ## ECBuild integration
 include(GNUInstallDirs)
 set( INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE STRING "Library installation directory" FORCE ) #Force ecbuild to use the default platform lib install location
@@ -75,6 +74,7 @@ option(ENABLE_MPAS_JEDI_DATA "Obtain mpas-jedi test data from mpas-jedi-data rep
 ecbuild_bundle( PROJECT mpas-jedi-data  GIT "https://github.com/JCSDA-internal/mpas-jedi-data.git"  TAG 3fff9f5 )
 #ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/JCSDA/mpas-jedi"     TAG b366edf )
 ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/PACE-DAAQ/mpas-jedi"     BRANCH mpas-gocart2g UPDATE )
+ecbuild_bundle( PROJECT ioda-converters GIT "https://github.com/jcsda-internal/ioda-converters"     TAG bcc116b )
 
 # Set GIT_BRANCH_FUNC to MPAS-JEDI's current branch so that it can be used for mpas-jedi-data
 find_branch_name(REPO_DIR_NAME mpas-jedi)
