@@ -65,16 +65,15 @@ ecbuild_bundle( PROJECT ufo       GIT "https://github.com/PACE-DAAQ/ufo.git"    
 find_package(ESMF 8.3.0 MODULE)
 
 set(MPAS_DOUBLE_PRECISION "ON" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")
+set(DO_GOCART2G "ON" CACHE STRING "MPAS-Model: Build with GOCART2G")
 set(MPAS_CORES init_atmosphere atmosphere CACHE STRING "MPAS-Model: cores to build.")
 
 #FIXME : MPAS model will be replaced with gocartMPAS in PACE-DAAQ after CMake is working with gocartMPAS.
-#ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/MPAS-Dev/MPAS-Model" TAG 9fa8cb2 )
-ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/PACE-DAAQ/MPAS-Model" BRANCH mpas-gocart2g UPDATE )
+ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/PACE-DAAQ/gocartMPAS.git" BRANCH main UPDATE )
 option(ENABLE_MPAS_JEDI_DATA "Obtain mpas-jedi test data from mpas-jedi-data repository (vs tarball)" ON)
 ecbuild_bundle( PROJECT mpas-jedi-data  GIT "https://github.com/JCSDA-internal/mpas-jedi-data.git"  TAG 3fff9f5 )
-#ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/JCSDA/mpas-jedi"     TAG b366edf )
 ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/PACE-DAAQ/mpas-jedi"     BRANCH mpas-gocart2g UPDATE )
-ecbuild_bundle( PROJECT ioda-converters GIT "https://github.com/jcsda-internal/ioda-converters"     TAG bcc116b )
+ecbuild_bundle( PROJECT iodaconv GIT "https://github.com/jcsda-internal/ioda-converters"     TAG bcc116b )
 
 # Set GIT_BRANCH_FUNC to MPAS-JEDI's current branch so that it can be used for mpas-jedi-data
 find_branch_name(REPO_DIR_NAME mpas-jedi)
