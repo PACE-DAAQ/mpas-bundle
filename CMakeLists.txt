@@ -69,10 +69,10 @@ set(DO_GOCART2G "ON" CACHE STRING "MPAS-Model: Build with GOCART2G")
 set(DO_PRM "ON" CACHE STRING "MPAS-Model: Build with PRM")
 set(MPAS_CORES init_atmosphere atmosphere CACHE STRING "MPAS-Model: cores to build.")
 
-ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/PACE-DAAQ/gocartMPAS.git" BRANCH  fix-registry-units  UPDATE )
+ecbuild_bundle( PROJECT MPAS      GIT "https://github.com/PACE-DAAQ/gocartMPAS.git" BRANCH main UPDATE )
 option(ENABLE_MPAS_JEDI_DATA "Obtain mpas-jedi test data from mpas-jedi-data repository (vs tarball)" ON)
 ecbuild_bundle( PROJECT mpas-jedi-data  GIT "https://github.com/JCSDA-internal/mpas-jedi-data.git"  TAG 3fff9f5 )
-ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/PACE-DAAQ/mpas-jedi"     BRANCH mpas-gocart2g )
+ecbuild_bundle( PROJECT mpas-jedi GIT "https://github.com/PACE-DAAQ/mpas-jedi"     BRANCH mpas-gocart2g UPDATE )
 ecbuild_bundle( PROJECT iodaconv GIT "https://github.com/jcsda-internal/ioda-converters"  BRANCH develop UPDATE )
 
 # Set GIT_BRANCH_FUNC to MPAS-JEDI's current branch so that it can be used for mpas-jedi-data
