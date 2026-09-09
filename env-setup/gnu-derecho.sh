@@ -35,6 +35,6 @@ module load py-pybind11/2.13.5
 module list
 
 ulimit -s unlimited
-export F_UFMTENDIAN='big_endian:101-200'
+export GFORTRAN_CONVERT_UNIT='big_endian:101-200'
 export LD_LIBRARY_PATH=`pwd`/lib:$LD_LIBRARY_PATH
 
